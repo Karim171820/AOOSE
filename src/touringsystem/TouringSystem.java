@@ -5,6 +5,11 @@
  */
 package touringsystem;
 
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+
 /**
  *
  * @author Kemiaa
@@ -15,7 +20,13 @@ public class TouringSystem {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+              MongoClient client = new MongoClient();
+              MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
+                 MongoCollection Traveler  = TouringSystem.getCollection("Traveler ");
+              
+//              Document Doc1 = new Document ("role","Traveler").append("name", "Khaled").append("password","2323232").append("age",25);
+//              Traveler .insertOne(Doc1);
     }
-    
+   
 }

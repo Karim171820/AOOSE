@@ -1,53 +1,107 @@
-///*
-// * To change this license header, choose License Headers in Project Properties.
-// * To change this template file, choose Tools | Templates
-// * and open the template in the editor.
-// */
-//package touringsystem;
-//
-//import com.mongodb.MongoClient;
-//import com.mongodb.client.MongoCollection;
-//import com.mongodb.client.MongoDatabase;
-//import com.mongodb.client.model.Filters;
-//import com.mongodb.client.result.DeleteResult;
-//import org.bson.Document;
-//
-///**
-// *
-// * @author pudu1
-// */
-//public class Reservation {
-//
-//    private int ID;
-//    private String reservationDate;
-////  private Traveler traveler;
-////  private Hotel hotel;
-////  private Airline airline;
-////  private Transporation transportation;
-////  private Packages package;
-////    private Payment payment;
-//
-//  public Reservation(int id, String date,Traveler trav)
-//  {
-//      
-//  }
-//    public Reservation reserve(int id, Traveler trav,String reservationDate, Packages package) {
-////database connection
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package touringsystem;
+
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.DeleteResult;
+import org.bson.Document;
+
+/**
+ *
+ * @author pudu1
+ */
+public class Reservation {
+
+    private int ID;
+    private Traveler traveler;
+    private String reservationDate;
+    private Packages packag;
+    private Payment payment;
+
+    // constructors
+    public Reservation() {
+    }
+
+    public Reservation(int ID, Traveler traveler, String reservationDate, Packages packag, Payment payment) {
+        this.ID = ID;
+        this.traveler = traveler;
+        this.reservationDate = reservationDate;
+        this.packag = packag;
+        this.payment = payment;
+    }
+
+//_________________________________________________________________________
+    // getters
+    public int getID() {
+        return ID;
+    }
+
+    public Traveler getTraveler() {
+        return traveler;
+    }
+
+    public String getReservationDate() {
+        return reservationDate;
+    }
+
+    public Packages getPackag() {
+        return packag;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+//_________________________________________________________________________
+    //setters
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setTraveler(Traveler traveler) {
+        this.traveler = traveler;
+    }
+
+    public void setReservationDate(String reservationDate) {
+        this.reservationDate = reservationDate;
+    }
+
+    public void setPackag(Packages packag) {
+        this.packag = packag;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+ //______________________________________________________________________________
+    // functions
+
+//    public Reservation reserve(int id, Traveler trav, String reservationDate,Packages packag ,Payment payment) {
+//// database connection
 //        MongoClient client = new MongoClient();
 //        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
 //        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-//        Document reservation = new Document("ID", id).
+//        Reservation reserve = new Reservation(id,trav,reservationDate,packag,payment);
+//        //  Document reservation = new Document("ID", id).
 //    }
-//    }
-//    public String CancelReservation(int id) {
-//        MongoClient client = new MongoClient();
-//        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-//        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-//        reservartion.deleteOne(Filters.eq("ID", id));
-//        if (reservartion.find(Filters.eq("ID", id)).first()) {
-//            return "reservation deleted";
-//        }
-//        return "reservation not deleted";
-//
-//    }
-//}
+
+    public String CancelReservation(int id) {
+        MongoClient client = new MongoClient();
+        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
+        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
+        reservartion.deleteOne(Filters.eq("ID", id));// delete from DB based in ID
+        Document find = (Document) reservartion.find((Filters.eq("ID", id)));
+        if (find == null) {     //check if the delete is successfull
+            return "reservation deleted";
+        }
+        return "reservation not deleted";
+    }
+
+}

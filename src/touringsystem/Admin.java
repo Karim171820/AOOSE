@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package touringsystem;
-
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 /**
  *
  * @author Ahmed Kamal
@@ -29,4 +32,18 @@ public class Admin extends User {
     private void UpdatePackage(Package pack){
         
     }  
+    @Override
+    public void Login() {
+    // Database Connection 
+        MongoClient client = new MongoClient();
+        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
+        
+//        if(super(role) == "admin"){
+//            MongoCollection admin  = TouringSystem.getCollection("Admin");
+//        }
+//        else 
+//        {
+//            System.out.println("Invalid Login");
+//        }
+    }
 }

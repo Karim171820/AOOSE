@@ -56,7 +56,6 @@ public class Traveler extends User {
         this.email = email;
     }
 
-    @Override
     public void Login() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

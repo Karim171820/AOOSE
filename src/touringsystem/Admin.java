@@ -32,17 +32,4 @@ public class Admin extends User {
     private void UpdatePackage(Package pack){
         
     }  
-    public void Login() {
-    // Database Connection 
-        MongoClient client = new MongoClient();
-        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-        
-//        if(super(role) == "admin"){
-//            MongoCollection admin  = TouringSystem.getCollection("Admin");
-//        }
-//        else 
-//        {
-//            System.out.println("Invalid Login");
-//        }
-    }
 }

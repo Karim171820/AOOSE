@@ -10,11 +10,13 @@ package touringsystem;
  * @author Ahmed Kamal
  */
 public class Traveler extends User {
+
     public int age;
     public String passportExpireDate;
     public int creditAmount;
     public String email;
-//    public Reservation reservationID;
+    public Reservation reservationID;
+    public Packages pack;
 
     public Traveler(int age, String passportExpireDate, int creditAmount, String email, int ID, String role, String name, String password) {
         super(ID, role, name, password);
@@ -56,10 +58,11 @@ public class Traveler extends User {
         this.email = email;
     }
 
-    public void Login() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void DisplayPackages(Packages pk) {
+
     }
-    
-    
-    
+
+    public void UpdateAccount(String username, String password, int age, String passportExpireDate, int creditAmount, String email) {
+
+    }
 }

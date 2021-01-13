@@ -17,14 +17,14 @@ import org.bson.Document;
  */
 public class Reservation {
 
-//    private int ID;
-//    private String reservationDate;
-//  private Traveler traveler;
-//  private Hotel hotel;
-//  private Airline airline;
-//  private Transporation transportation;
-//  private Packages package;
-//    private Payment payment;
+    private int ID;
+    private String reservationDate;
+    private Traveler traveler;
+    private Hotel hotel;
+//     private Airline airline;
+     private Transportation transportation;
+//     private Packages package;
+//     private Payment payment;
 
 //  public Reservation(int id, String date,Hotel hotel,Airline airline,Transportation transport,Traveler trav)
 //  {

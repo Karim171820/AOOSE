@@ -24,10 +24,13 @@ public class TouringSystem {
               MongoClient client = new MongoClient();
               MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
               MongoCollection Traveler  = TouringSystem.getCollection("Traveler ");
-              MongoCollection Hotel = TouringSystem.getCollection("Hotel");
 //              Document Doc1 = new Document ("role","Traveler").append("name", "Khaled").append("password","2323232").append("age",25);
 //              Traveler .insertOne(Doc1);
 // comment 1
+              
+              
+              Hotel h = new Hotel();
+              h.checkAvailableRoom(null);
     }
    
 }

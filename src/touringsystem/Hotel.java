@@ -2,16 +2,19 @@ package touringsystem;
 
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.model.Filters;
 import static com.mongodb.client.model.Filters.where;
+import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.iterator;
 import org.bson.Document;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Iterator;
-
 
 
 /*
@@ -41,9 +44,17 @@ public class Hotel {
     }
     
     
-    /*public void checkAvailableRoom(ArrayList<Room> room){
-       MongoCollection<Document> Hotel = database.getCollection("Hotel");
-       Document Available = (Document)Hotel.find(Filters.all("Available", true)).first();
-        System.out.println(Available);
-    }*/
+   public void checkAvailableRoom(ArrayList<Room> room){
+       MongoClient mongoClient = new MongoClient("localhost", 27017);
+       MongoDatabase database = mongoClient.getDatabase("TouringSystem");
+       MongoCollection<Document> collection = database.getCollection("Hotel");
+       Document query = new Document();
+       query.put("rooms.Available", false);
+       FindIterable<Document> iterDoc = collection.find(query);
+       Iterator it = iterDoc.iterator();
+       while(it.hasNext()){
+           System.out.println(it.next());
+       }
+
+    }
 }

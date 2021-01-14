@@ -87,9 +87,13 @@ public class Reservation {
         MongoClient client = new MongoClient();
         MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
         MongoCollection reservartion = TouringSystem.getCollection("Reservation");
+        
+        // create object of reservation
         Reservation reserve = new Reservation(id, trav, reservationDate, packag, payment);
+        // create query 
         Document query = new Document("ID", id)
-                .append("traveler.age", trav.getAge())
+                .append("traveler.age", trav.getAge())                                     
+                .append("traveler.tID", trav.getID())
                 .append("traveler.passportExpireDa_", trav.getPassportExpireDate())
                 .append("traveler.email", trav.getEmail())
                 .append("reservationDate", reservationDate)
@@ -98,6 +102,7 @@ public class Reservation {
                 .append("package.Price", packag.getPrice())
                 .append("payment.PaymentID", payment.getID())
                 .append("payment.PaymentMethode", payment.getPaymnetMethod());
+        //insert into class reservation
         reservartion.insertOne(query);
         return reserve;
     }

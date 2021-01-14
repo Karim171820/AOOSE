@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package touringsystem;
+import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import org.bson.Document;
 /**
  *
@@ -15,6 +17,7 @@ import org.bson.Document;
 public class Admin extends User {
     
     private static Admin admin = null;
+    private Gson gson = new Gson();
 
     private Admin(int ID, String role, String name, String password) {
         super(ID, role, name, password);
@@ -29,6 +32,27 @@ public class Admin extends User {
             return admin;
     }
 
+    
+    public Admin Login(String Un, String pass) {
+        MongoClient client = new MongoClient();
+        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
+
+        if (this.getRole() == "admin") {
+            MongoCollection traveler = TouringSystem.getCollection("Traveler");
+            Document tacc = (Document) traveler.find(Filters.eq("name", Un)).first();  // tacc refers to traveler account
+            Traveler result = gson.fromJson(tacc.toJson(), Traveler.class);
+
+            if (tacc.containsValue(Un) && tacc.containsValue(pass)) {
+                System.out.println("Welcome, " + Un);
+                return result;
+            }
+            else
+                System.out.println("Invlaid Login");
+             return null;    
+        }
+        return null;
+    }
+    
     private void UpdatePackage(Package pack){
         
     }  

@@ -61,44 +61,4 @@ public abstract class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public void Login(String role, String Un, String pass) {
-        MongoClient client = new MongoClient();
-        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-
-        if (role == "Traveler") {
-            MongoCollection traveler = TouringSystem.getCollection("Traveler");
-            Document tacc = (Document) traveler.find(Filters.eq("name", Un)).first();  // tacc refers to traveler account
-            if (tacc.containsValue(Un) && tacc.containsValue(pass)) {
-                System.out.println("Welcome, " + Un);
-            }
-        } else if (role == "Admin") {
-            MongoCollection admin = TouringSystem.getCollection("Admin");
-            Document Aacc = (Document) admin.find(Filters.eq("name", Un)).first();  // Aacc refers to admin account
-            if (Aacc.containsValue(Un) && Aacc.containsValue(pass)) {
-                System.out.println("Welcome, " + Un);
-            }
-        } else {
-            System.out.println("Invlaid Login");
-        }
-    }
-    
-    public void UpdateAccount(int Uid, String role,User user) {
-        
-        MongoClient client = new MongoClient();
-        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-
-        if (role == "Traveler") {
-            MongoCollection traveler = TouringSystem.getCollection("Traveler");
-            Document tacc = (Document) traveler.find(Filters.eq("ID", Uid)).first();  // tacc refers to traveler account
-            
-        }
-        else if (role == "Admin") {
-            MongoCollection admin = TouringSystem.getCollection("Admin");
-            Document Aacc = (Document) admin.find(Filters.eq("ID", Uid)).first();  // Aacc refers to admin account
-            
-        } else {
-            System.out.println("Invlaid Login");
-        }  
-    }
 }

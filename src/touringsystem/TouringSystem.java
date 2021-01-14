@@ -32,5 +32,4 @@ public class TouringSystem {
               Hotel h = new Hotel();
               h.checkAvailableRoom(null);
     }
-   
 }

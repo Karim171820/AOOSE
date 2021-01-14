@@ -8,12 +8,16 @@ package touringsystem;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
+import org.bson.Document;
 
 /**
  *
  * @author Ahmed Kamal
  */
 public abstract class User {
+
     private int ID;
     private String role;
     private String name;
@@ -57,23 +61,4 @@ public abstract class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    public void Login(String username, String pass){
-        // Database Connection 
-        MongoClient client = new MongoClient();
-        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-        
-        if(role == "admin"){
-            MongoCollection admin  = TouringSystem.getCollection("Admin");
-            
-        }
-        else if (role == "Traveler"){
-            MongoCollection Traveler = TouringSystem.getCollection("Traveler");
-        }
-    }
-    
-    public void UpdateAccount(User user){
-        
-    }
-    
 }

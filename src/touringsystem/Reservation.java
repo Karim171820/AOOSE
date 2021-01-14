@@ -60,7 +60,6 @@ public class Reservation {
 
 //_________________________________________________________________________
     //setters
-
     public void setID(int ID) {
         this.ID = ID;
     }
@@ -80,17 +79,28 @@ public class Reservation {
     public void setPayment(Payment payment) {
         this.payment = payment;
     }
- //______________________________________________________________________________
+    //______________________________________________________________________________
     // functions
 
-//    public Reservation reserve(int id, Traveler trav, String reservationDate,Packages packag ,Payment payment) {
-//// database connection
-//        MongoClient client = new MongoClient();
-//        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-//        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-//        Reservation reserve = new Reservation(id,trav,reservationDate,packag,payment);
-//        //  Document reservation = new Document("ID", id).
-//    }
+    public Reservation reserve(int id, Traveler trav, String reservationDate, Packages packag, Payment payment) {
+// database connection
+        MongoClient client = new MongoClient();
+        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
+        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
+        Reservation reserve = new Reservation(id, trav, reservationDate, packag, payment);
+        Document query = new Document("ID", id)
+                .append("traveler.age", trav.getAge())
+                .append("traveler.passportExpireDa_", trav.getPassportExpireDate())
+                .append("traveler.email", trav.getEmail())
+                .append("reservationDate", reservationDate)
+                .append("package.ID", packag.getID())
+                .append("package.name", packag.getName())
+                .append("package.Price", packag.getPrice())
+                .append("payment.PaymentID", payment.getID())
+                .append("payment.PaymentMethode", payment.getPaymnetMethod());
+        reservartion.insertOne(query);
+        return reserve;
+    }
 
     public String CancelReservation(int id) {
         MongoClient client = new MongoClient();
@@ -104,4 +114,11 @@ public class Reservation {
         return "reservation not deleted";
     }
 
+//    public void UpdateReservation(int id, Traveler trav, String reservationDate, Packages packag, Payment payment) {
+//        MongoClient client = new MongoClient();
+//        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
+//        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
+//        Reservation reserve = new Reservation(id, trav, reservationDate, packag, payment);
+//        Document query =new Document();
+//    }
 }

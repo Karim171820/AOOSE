@@ -1,42 +1,12 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Kemiaa/Desktop/TouringSystem/src/touringsystem/User.java</file>
-            <file>file:/C:/Users/Kemiaa/Desktop/TouringSystem/src/touringsystem/Reservation.java</file>
-            <file>file:/C:/Users/Kemiaa/Desktop/TouringSystem/src/touringsystem/Airline.java</file>
             <file>file:/C:/Users/Kemiaa/Desktop/TouringSystem/src/touringsystem/Packages.java</file>
             <file>file:/C:/Users/Kemiaa/Desktop/TouringSystem/src/touringsystem/Traveler.java</file>
             <file>file:/C:/Users/Kemiaa/Desktop/TouringSystem/src/touringsystem/TouringSystem.java</file>
-            <file>file:/C:/Users/Kemiaa/Desktop/TouringSystem/src/touringsystem/Payment.java</file>
+            <file>file:/C:/Users/Kemiaa/Desktop/TouringSystem/src/touringsystem/PackageReadOnly.java</file>
         </group>
     </open-files>
 </project-private>
-=======
-=======
->>>>>>> 7a80abf6e2a81444d82a243f729699c319eda766
-<?xml version="1.0" encoding="UTF-8"?>
-<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/a7aoo/OneDrive/Documents/GitHub/AOOSE/src/touringsystem/TouringSystem.java</file>
-            <file>file:/C:/Users/a7aoo/OneDrive/Documents/GitHub/AOOSE/src/touringsystem/Hotel.java</file>
-            <file>file:/C:/Users/a7aoo/OneDrive/Documents/GitHub/AOOSE/src/touringsystem/Room.java</file>
-            <file>file:/C:/Users/a7aoo/OneDrive/Documents/GitHub/AOOSE/src/touringsystem/TransportationLeader.java</file>
-            <file>file:/C:/Users/a7aoo/OneDrive/Documents/GitHub/AOOSE/src/touringsystem/Transportation.java</file>
-        </group>
-    </open-files>
-</project-private>
->>>>>>> 576fddb7b227450dc5f32a6ae7e070ee57b0fbf1
-=======
-            <file>file:/C:/Users/pudu1/Desktop/BUE/AOOSE/Project/Final%20Phase/AOOSE/src/touringsystem/TouringSystem.java</file>
-            <file>file:/C:/Users/pudu1/Desktop/BUE/AOOSE/Project/Final%20Phase/AOOSE/src/touringsystem/Reservation.java</file>
-        </group>
-    </open-files>
-</project-private>
->>>>>>> 7a80abf6e2a81444d82a243f729699c319eda766

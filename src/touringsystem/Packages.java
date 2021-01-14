@@ -5,11 +5,16 @@
  */
 package touringsystem;
 
+import com.google.gson.Gson;
+import com.mongodb.client.MongoCollection;
+import java.util.ArrayList;
+import org.bson.Document;
+
 /**
  *
  * @author Kemiaa
  */
-public class Packages {
+public class Packages  implements PackageReadOnly {
     
     private int ID;
     private String name;
@@ -17,6 +22,8 @@ public class Packages {
     private Transportation transportation;
     private Hotel hotel;
     private int price;
+    private MongoCollection<Document> collection;
+    private Gson gson = new Gson();
 
     public Packages(int ID, String name, Airline airline, Transportation transportation, Hotel hotel, int price) {
         this.ID = ID;
@@ -74,6 +81,19 @@ public class Packages {
     public void setPrice(int price) {
         this.price = price;
     }
-    
-    
-}
+     public ArrayList<Packages> getAllPackages(){
+
+        ArrayList<Packages> result = new ArrayList();
+        ArrayList<Document> docs = collection.find().into(new ArrayList<Document>());
+        for (int i = 0; i < docs.size(); i++) {
+            result.add(gson.fromJson(docs.get(i).toJson(), Packages.class));
+        }
+        return result;
+        
+    }
+     
+     
+     
+     
+     }
+   

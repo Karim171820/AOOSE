@@ -20,15 +20,19 @@ import org.bson.Document;
  *
  * @author Ahmed Kamal
  */
-public class Traveler extends User {
+public class Traveler extends User implements TravelerObserver {
 
     public int age;
     public String passportExpireDate;
     public int creditAmount;
     public String email;
     public Reservation reservationID;
-    public Packages pack;
     private Gson gson = new Gson();
+    
+    //observer variables 
+    private int ID;
+    private String name;
+    private int price;
 
     public Traveler(int age, String passportExpireDate, int creditAmount, String email, int ID, String role, String name, String password) {
         super(ID, role, name, password);
@@ -117,4 +121,12 @@ public class Traveler extends User {
             System.out.println("Failed To Update");
         }
     }
+
+    // Obserer update function 
+    public void UpdatePackageData(int ID, String name, int price) {
+        this.ID = ID;
+        this.name = name;
+        this.price = price;
+    }
+ 
 }

@@ -5,11 +5,13 @@
  */
 package touringsystem;
 
+import java.util.ArrayList; 
+import java.util.Iterator;
 /**
  *
  * @author Kemiaa
  */
-public class Packages {
+public class Packages implements TravelerSubject {
     
     private int ID;
     private String name;
@@ -17,6 +19,7 @@ public class Packages {
     private Transportation transportation;
     private Hotel hotel;
     private int price;
+    private ArrayList<TravelerObserver> observerList;
 
     public Packages(int ID, String name, Airline airline, Transportation transportation, Hotel hotel, int price) {
         this.ID = ID;
@@ -73,6 +76,26 @@ public class Packages {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    
+    
+    @Override
+    public void registerObserver(TravelerObserver o) {
+        observerList.add(o);
+    }
+
+    @Override
+    public void removeObserver(TravelerObserver o) {
+       observerList.remove(observerList.indexOf(o));
+    }
+
+    @Override
+    public void notifyObserver() {
+        for(Iterator<TravelerObserver> it = observerList.iterator(); it.hasNext();){
+            TravelerObserver o = it.next();
+            o.UpdatePackageData(ID, name, price);
+        }
     }
     
     

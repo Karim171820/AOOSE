@@ -5,25 +5,32 @@
  */
 package touringsystem;
 
+
 import com.google.gson.Gson;
 import com.mongodb.client.MongoCollection;
 import java.util.ArrayList;
 import org.bson.Document;
+import java.util.Iterator;
+
 
 /**
  *
  * @author Kemiaa
  */
-public class Packages  implements PackageReadOnly {
-    
+
+public class Packages  implements PackageReadOnly , TravelerSubject {
+
     private int ID;
     private String name;
     private Airline airline;
     private Transportation transportation;
     private Hotel hotel;
     private int price;
+
     private MongoCollection<Document> collection;
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
+     private ArrayList<TravelerObserver> observerList;
+
 
     public Packages(int ID, String name, Airline airline, Transportation transportation, Hotel hotel, int price) {
         this.ID = ID;
@@ -92,8 +99,25 @@ public class Packages  implements PackageReadOnly {
         
     }
      
-     
-     
-     
+         @Override
+    public void registerObserver(TravelerObserver o) {
+        observerList.add(o);
+    }
+
+    @Override
+    public void removeObserver(TravelerObserver o) {
+       observerList.remove(observerList.indexOf(o));
+    }
+
+    @Override
+    public void notifyObserver() {
+        for(Iterator<TravelerObserver> it = observerList.iterator(); it.hasNext();){
+            TravelerObserver o = it.next();
+            o.UpdatePackageData(ID, name, price);
+        }
      }
    
+    
+}
+    
+    

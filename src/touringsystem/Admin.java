@@ -38,11 +38,11 @@ public class Admin extends User {
         MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
 
         if (this.getRole() == "admin") {
-            MongoCollection traveler = TouringSystem.getCollection("Traveler");
-            Document tacc = (Document) traveler.find(Filters.eq("name", Un)).first();  // tacc refers to traveler account
-            Traveler result = gson.fromJson(tacc.toJson(), Traveler.class);
+            MongoCollection admin = TouringSystem.getCollection("Admin");
+            Document Aacc = (Document) admin.find(Filters.eq("name", Un)).first();  // Aacc refers to traveler account
+            Admin result = gson.fromJson(Aacc.toJson(), Admin.class);
 
-            if (tacc.containsValue(Un) && tacc.containsValue(pass)) {
+            if (Aacc.containsValue(Un) && Aacc.containsValue(pass)) {
                 System.out.println("Welcome, " + Un);
                 return result;
             }

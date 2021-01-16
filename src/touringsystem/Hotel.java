@@ -1,19 +1,14 @@
 package touringsystem;
 
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.FindIterable;
-import com.mongodb.client.model.Filters;
-import static com.mongodb.client.model.Filters.where;
-import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.iterator;
+
 import org.bson.Document;
 import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Iterator;
 
 
@@ -41,6 +36,46 @@ public class Hotel {
     }
 
     public Hotel() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getTotalNumberOfRooms() {
+        return totalNumberOfRooms;
+    }
+
+    public void setTotalNumberOfRooms(int totalNumberOfRooms) {
+        this.totalNumberOfRooms = totalNumberOfRooms;
+    }
+
+    public int getRoomsAvailable() {
+        return roomsAvailable;
+    }
+
+    public void setRoomsAvailable(int roomsAvailable) {
+        this.roomsAvailable = roomsAvailable;
+    }
+
+    public ArrayList<Room> getRoom() {
+        return room;
+    }
+
+    public void setRoom(ArrayList<Room> room) {
+        this.room = room;
     }
     
     

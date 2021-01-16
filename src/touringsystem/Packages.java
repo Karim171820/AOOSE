@@ -7,10 +7,8 @@ package touringsystem;
 
 
 import com.google.gson.Gson;
-import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import java.util.ArrayList;
 import org.bson.Document;
@@ -38,7 +36,14 @@ public class Packages  implements PackageReadOnly , TravelerSubject {
     public Packages() {
     }
 
+    public Packages(int ID, String name, int price) {
+        this.ID = ID;
+        this.name = name;
+        this.price = price;
+    }
 
+    
+    
     public Packages(int ID, String name, Airline airline, Transportation transportation, Hotel hotel, int price) {
         this.ID = ID;
         this.name = name;
@@ -98,9 +103,6 @@ public class Packages  implements PackageReadOnly , TravelerSubject {
 
     public Packages getPackagesByName(String name,MongoCollection PackageCollection){
         Packages result;
-//        MongoClient client = new MongoClient();
-//        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-//        MongoCollection coll = PackageCollection.getCollection("Packages");
         Document docs = (Document)PackageCollection.find(Filters.eq("name", name)).first();
         result = gson.fromJson(docs.toJson(), Packages.class);
         return result;
@@ -110,12 +112,6 @@ public class Packages  implements PackageReadOnly , TravelerSubject {
     
      public void getAllPackages(MongoCollection PackageCollection){
 
-//        ArrayList<Packages> result = new ArrayList();
-//        ArrayList<Document> docs = collection.find().into(new ArrayList<>());
-//        for (int i = 0; i < docs.size(); i++) {
-//            result.add(gson.fromJson(docs.get(i).toJson(), Packages.class));
-//        }
-//        return result;
        FindIterable<Document> iterDoc = PackageCollection.find();
        Iterator it = iterDoc.iterator();
        System.out.println("Hey");

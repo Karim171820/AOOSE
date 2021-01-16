@@ -30,9 +30,9 @@ public class Traveler extends User implements TravelerObserver {
     private Gson gson = new Gson();
 
     //observer variables 
-//    private int ID;
-//    private String name;
-//    private int price;
+    private int opID;
+    private String opname;
+    private int opprice;
 
   public Traveler(int id, String role, String name,String password, int age, String passportExpire, int creditAmount, String email){
         super(id,role,name,password);
@@ -152,16 +152,10 @@ public class Traveler extends User implements TravelerObserver {
     }
 
     // Obserer update function 
-//    @Override
-//    public void UpdatePackageData(int ID, String name, int price) {
-//        this.ID = ID;
-//        this.name = name;
-//        this.price = price;
-//    }
-
     @Override
     public void UpdatePackageData(int ID, String name, int price) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.opID = ID;
+        this.opname = name;
+        this.opprice = price;
     }
-
 }

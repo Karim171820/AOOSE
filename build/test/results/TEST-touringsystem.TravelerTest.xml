@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="AHMEDKAMAL" name="touringsystem.TravelerTest" skipped="0" tests="1" time="0.639" timestamp="2021-01-16T02:04:20">
+  <properties>
+    <property name="" value="======" />
+    <property name="javac.test.classpath" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\bson-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\gson-2.8.2.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\bson-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\gson-2.8.2.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-core-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\bson-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\gson-2.8.2.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\hamcrest-core-1.3.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\junit-4.11.jar:build/classes" />
+    <property name="javac.includesfile.binary" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\null1392948521" />
+    <property name="java.specification.version" value="13" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="jar.index.metainf" value="false" />
+    <property name="javadoc.preview" value="true" />
+    <property name="do.depend" value="false" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="test.binaryincludes" value="&lt;nothing&gt;" />
+    <property name="nb.show.statistics.ui" value="usageStatisticsEnabled" />
+    <property name="debug-transport" value="dt_shmem" />
+    <property name="java.vendor.url" value="https://java.oracle.com/" />
+    <property name="annotation.processing.enabled" value="true" />
+    <property name="debug.modulepath" value="" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-13.0.2\bin" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner touringsystem.TravelerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build\test\results\TEST-touringsystem.TravelerTest.xml crashfile=A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build\junitvmwatcher9735145039738668450.properties propsfile=A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build\junit16119614908837903014.properties" />
+    <property name="jdk.debug" value="release" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="javac.source" value="1.8" />
+    <property name="javadoc.use" value="true" />
+    <property name="java.version.date" value="2020-01-14" />
+    <property name="javadoc.notree" value="false" />
+    <property name="java.home" value="C:\Program Files\Java\jdk-13.0.2" />
+    <property name="basedir" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE" />
+    <property name="application.vendor" value="adnan" />
+    <property name="work.dir" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="javac.test.compilerargs" value="" />
+    <property name="jna.boot.library.name" value="jnidispatch-nb" />
+    <property name="netbeans.extbrowser.manual_chrome_plugin_install" value="yes" />
+    <property name="user.script" value="" />
+    <property name="manifest.encoding" value="UTF-8" />
+    <property name="netbeans.default_userdir_root" value="C:\Users\Ahmed Kamal\AppData\Roaming\NetBeans" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="run.test.modulepath" value="" />
+    <property name="jdk.home" value="C:\Program Files\Java\jdk-13.0.2" />
+    <property name="java.runtime.version" value="13.0.2+8" />
+    <property name="debug.test.modulepath" value="" />
+    <property name="file.encoding" value="Cp1252" />
+    <property name="sun.java2d.noddraw" value="true" />
+    <property name="sun.zip.disableMemoryMapping" value="true" />
+    <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
+    <property name="jnidispatch.path" value="C:\Users\AHMEDK~1\AppData\Local\Temp\jna-230303847\jna709339621988519394.dll" />
+    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|AHMEDKAMAL" />
+    <property name="dist.archive.excludes" value="" />
+    <property name="java.io.tmpdir" value="C:\Users\AHMEDK~1\AppData\Local\Temp\" />
+    <property name="do.archive" value="true" />
+    <property name="java.version" value="13.0.2" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="built-jar.properties" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build\built-jar.properties" />
+    <property name="nb.native.filechooser" value="false" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-13.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Brackets\command;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\WINDOWS\System32\OpenSSH\;C:\PROGRA~1\MATLAB\R2020b\bin;C:\Program Files\MATLAB\R2020b\bin;C:\Program Files\nodejs\;C:\Program Files\kubectl;C:\Program Files\helm\windows-amd64;C:\Users\Ahmed Kamal\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Ahmed Kamal\AppData\Local\Programs\Python\Python38-32\;C:\Users\Ahmed Kamal\AppData\Local\Microsoft\WindowsApps;C:\Users\Ahmed Kamal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ahmed Kamal\AppData\Local\GitHubDesktop\bin;C:\Users\Ahmed Kamal\AppData\Local\Microsoft\WindowsApps;C:\Users\Ahmed Kamal\AppData\Roaming\npm;C:\Program Files\IBM\Cloud\bin;." />
+    <property name="platform.active" value="default_platform" />
+    <property name="manifest.file" value="manifest.mf" />
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="meta.inf.dir" value="src/META-INF" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="ant.file.TouringSystem-impl" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\nbproject\build-impl.xml" />
+    <property name="compile.on.save" value="true" />
+    <property name="&lt;&lt;&lt;&lt;&lt;&lt;&lt;" value="HEAD" />
+    <property name="org.openide.version" value="deprecated" />
+    <property name="default.javac.source" value="1.6" />
+    <property name="test.includes" value="touringsystem/TravelerTest.java" />
+    <property name="netbeans.dynamic.classpath" value="C:\Program Files\NetBeans-12.1\netbeans\platform\core\asm-8.0.1.jar;C:\Program Files\NetBeans-12.1\netbeans\platform\core\asm-commons-8.0.1.jar;C:\Program Files\NetBeans-12.1\netbeans\platform\core\asm-tree-8.0.1.jar;C:\Program Files\NetBeans-12.1\netbeans\platform\core\core-base.jar;C:\Program Files\NetBeans-12.1\netbeans\platform\core\core.jar;C:\Program Files\NetBeans-12.1\netbeans\platform\core\org-netbeans-libs-asm.jar;C:\Program Files\NetBeans-12.1\netbeans\platform\core\org-openide-filesystems-compat8.jar;C:\Program Files\NetBeans-12.1\netbeans\platform\core\org-openide-filesystems.jar;C:\Program Files\NetBeans-12.1\netbeans\nb\core\org-netbeans-upgrader.jar;C:\Program Files\NetBeans-12.1\netbeans\nb\core\locale\core_nb.jar" />
+    <property name="run.classpath" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\bson-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\gson-2.8.2.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\bson-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\gson-2.8.2.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-core-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\bson-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\gson-2.8.2.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\hamcrest-core-1.3.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\junit-4.11.jar:build/classes" />
+    <property name="sun.awt.enableExtraMouseButtons" value="true" />
+    <property name="test.src.dir" value="test" />
+    <property name="org.openide.major.version" value="IDE/1" />
+    <property name="netbeans.buildnumber" value="12.1-cade25887c5450e4595fa59e616daee4d2520ee0" />
+    <property name="ap.proc.none.internal" value="" />
+    <property name="org.openide.specification.version" value="6.2" />
+    <property name="endorsed.classpath.cmd.line.arg" value="" />
+    <property name="user.timezone" value="Africa/Cairo" />
+    <property name="jar.index" value="false" />
+    <property name="build.sysclasspath" value="ignore" />
+    <property name="java.vm.specification.version" value="13" />
+    <property name="os.name" value="Windows 10" />
+    <property name="javadoc.noindex" value="false" />
+    <property name="javadoc.private" value="false" />
+    <property name="jdkBug6558476" value="false" />
+    <property name="javadoc.author" value="false" />
+    <property name="http.nonProxyHosts" value="localhost|127.0.0.1|AHMEDKAMAL" />
+    <property name="main.class" value="touringsystem.TouringSystem" />
+    <property name="user.home" value="C:\Users\Ahmed Kamal" />
+    <property name="source.encoding" value="UTF-8" />
+    <property name="file.reference.gson-2.8.2.jar" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\gson-2.8.2.jar" />
+    <property name="jar.compress" value="false" />
+    <property name="have.sources" value="true" />
+    <property name="annotation.processing.processors.list" value="" />
+    <property name="file.reference.gson-2.8.2.jar-2" value="C:\Users\Kemiaa\Desktop\Mongo JAR\gson-2.8.2.jar" />
+    <property name="javac.deprecation" value="false" />
+    <property name="file.reference.gson-2.8.2.jar-1" value="A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\gson-2.8.2.jar" />
+    <property name="build.generated.sources.dir" value="build/generated-sources" />
+    <property name="apple.awt.graphics.UseQuartz" value="true" />
+    <property name="plugin.manager.check.updates" value="false" />
+    <property name="run.jvmargs" value="" />
+    <property name="netbeans.autoupdate.language" value="en" />
+    <property name="build.compiler.emacs" value="true" />
+    <property name="build.classes.excludes" value="**/*.java,**/*.form" />
+    <property name="dist.jar" value="dist/TouringSystem.jar" />
+    <property name="ant.file" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build.xml" />
+    <property name="path.separator" value=";" />
+    <property name="os.version" value="10.0" />
+    <property name="netbeans.home" value="C:\Program Files\NetBeans-12.1\netbeans\platform" />
+    <property name="build.test.results.dir" value="build/test/results" />
+    <property name="debug-transport-by-os" value="dt_shmem" />
+    <property name="ap.processors.internal" value="" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="ant.file.TouringSystem" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build.xml" />
+    <property name="os.arch" value="amd64" />
+    <property name="build.generated.dir" value="build/generated" />
+    <property name="do.jar" value="true" />
+    <property name="java.vm.info" value="mixed mode, sharing" />
+    <property name="run.test.classpath" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\bson-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\gson-2.8.2.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\bson-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\gson-2.8.2.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-core-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\bson-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\gson-2.8.2.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\hamcrest-core-1.3.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\junit-4.11.jar:build/classes:build/test/classes" />
+    <property name="javadoc.encoding.used" value="UTF-8" />
+    <property name="java.class.version" value="57.0" />
+    <property name="src.dir" value="src" />
+    <property name="org.netbeans.io.suspend" value="0" />
+    <property name="debug.classpath" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\bson-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\gson-2.8.2.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\bson-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\gson-2.8.2.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-core-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\bson-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\gson-2.8.2.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\hamcrest-core-1.3.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\junit-4.11.jar:build/classes" />
+    <property name="ant.project.default-target" value="default" />
+    <property name="excludes" value="" />
+    <property name="ant.project.name" value="TouringSystem" />
+    <property name="dist.javadoc.dir" value="dist/javadoc" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="run.test.jvmargs" value="" />
+    <property name="default.javac.target" value="1.6" />
+    <property name="javac.fork" value="true" />
+    <property name="sun.java2d.dpiaware" value="true" />
+    <property name="main.class.available" value="true" />
+    <property name="file.reference.junit-4.11.jar" value="A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\junit-4.11.jar" />
+    <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
+    <property name="netbeans.autoupdate.version" value="1.23" />
+    <property name="empty.dir" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build\empty" />
+    <property name="testng.mode" value="testng" />
+    <property name="annotation.processing.enabled.in.editor" value="false" />
+    <property name="netbeans.user" value="C:\Users\Ahmed Kamal\AppData\Roaming\NetBeans\12.1" />
+    <property name="javac.includes.binary" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build\test\classes\touringsystem\TravelerTest.class" />
+    <property name="file.separator" value="\" />
+    <property name="java.vm.compressedOopsMode" value="32-bit" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="javadoc.additionalparam" value="" />
+    <property name="netbeans.productversion" value="Apache NetBeans IDE 12.1" />
+    <property name="javac.debug" value="true" />
+    <property name="mkdist.disabled" value="false" />
+    <property name="user.name" value="Ahmed Kamal" />
+    <property name="build.classes.dir" value="build/classes" />
+    <property name="nb.junit.single" value="false" />
+    <property name="javadoc.windowtitle" value="" />
+    <property name="nb.internal.action.name" value="test.single" />
+    <property name="annotation.processing.processor.options" value="" />
+    <property name="dist.dir" value="dist" />
+    <property name="jna.loaded" value="true" />
+    <property name="build.dir" value="build" />
+    <property name="netbeans.autoupdate.variant" value="" />
+    <property name="javadoc.version" value="false" />
+    <property name="ant.junit.enabletestlistenerevents" value="true" />
+    <property name="ant.home" value="C:\Program Files\NetBeans-12.1\netbeans\extide\ant" />
+    <property name="sun.os.patch.level" value="" />
+    <property name="have.tests" value="true" />
+    <property name="debug.test.classpath" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\bson-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\gson-2.8.2.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\bson-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\gson-2.8.2.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-core-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\bson-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\gson-2.8.2.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\hamcrest-core-1.3.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\junit-4.11.jar:build/classes:build/test/classes" />
+    <property name="javac.external.vm" value="true" />
+    <property name="testng.debug.mode" value="" />
+    <property name="javac.target" value="1.8" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.4 compiled on June 19 2018" />
+    <property name="jdk.gtk.version" value="2.2" />
+    <property name="javac.test.processorpath" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\bson-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\gson-2.8.2.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\bson-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\gson-2.8.2.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-core-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\bson-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\gson-2.8.2.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\hamcrest-core-1.3.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\junit-4.11.jar:build/classes" />
+    <property name="java.failonerror" value="true" />
+    <property name="netbeans.dirs" value="C:\Program Files\NetBeans-12.1\netbeans\nb;C:\Program Files\NetBeans-12.1\netbeans\ergonomics;C:\Program Files\NetBeans-12.1\netbeans\ide;C:\Program Files\NetBeans-12.1\netbeans\extide;C:\Program Files\NetBeans-12.1\netbeans\java;C:\Program Files\NetBeans-12.1\netbeans\apisupport;C:\Program Files\NetBeans-12.1\netbeans\webcommon;C:\Program Files\NetBeans-12.1\netbeans\websvccommon;C:\Program Files\NetBeans-12.1\netbeans\enterprise;C:\Program Files\NetBeans-12.1\netbeans\mobility;C:\Program Files\NetBeans-12.1\netbeans\profiler;C:\Program Files\NetBeans-12.1\netbeans\python;C:\Program Files\NetBeans-12.1\netbeans\php;C:\Program Files\NetBeans-12.1\netbeans\identity;C:\Program Files\NetBeans-12.1\netbeans\harness;C:\Program Files\NetBeans-12.1\netbeans\cnd;C:\Program Files\NetBeans-12.1\netbeans\cndext;C:\Program Files\NetBeans-12.1\netbeans\cpplite;C:\Program Files\NetBeans-12.1\netbeans\dlight;C:\Program Files\NetBeans-12.1\netbeans\groovy;C:\Program Files\NetBeans-12.1\netbeans\extra;C:\Program Files\NetBeans-12.1\netbeans\javacard;C:\Program Files\NetBeans-12.1\netbeans\javafx" />
+    <property name="javac.modulepath" value="" />
+    <property name="user.properties.file" value="C:\Users\Kemiaa\AppData\Roaming\NetBeans\8.2\build.properties" />
+    <property name="javac.includes" value="touringsystem/TravelerTest.java" />
+    <property name="netbeans.autoupdate.country" value="US" />
+    <property name="ant.file.type.TouringSystem" value="file" />
+    <property name="javac.processorpath" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\bson-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\gson-2.8.2.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\bson-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\gson-2.8.2.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-core-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\bson-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\gson-2.8.2.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\hamcrest-core-1.3.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\junit-4.11.jar" />
+    <property name="java.class.path" value="A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\bson-3.11.1.jar;A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\gson-2.8.2.jar;A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-3.11.1.jar;A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-core-3.11.1.jar;A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\hamcrest-core-1.3.jar;A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\junit-4.11.jar;A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build\classes;A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build\test\classes;C:\Program Files\NetBeans-12.1\netbeans\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans-12.1\netbeans\extide\ant\lib\ant.jar;C:\Program Files\NetBeans-12.1\netbeans\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans-12.1\netbeans\extide\ant\lib\ant-junit4.jar" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="ap.supported.internal" value="true" />
+    <property name="user.variant" value="" />
+    <property name="netbeans.home+have.tests" value="true" />
+    <property name="run.modulepath" value="" />
+    <property name="test.binaryexcludes" value="" />
+    <property name="do.archive+manifest.available" value="true" />
+    <property name="javac.compilerargs" value="" />
+    <property name="apple.laf.useScreenMenuBar" value="true" />
+    <property name="user.country" value="US" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="file.reference.mongodb-driver-3.11.1.jar-2" value="C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-3.11.1.jar" />
+    <property name="file.reference.mongodb-driver-3.11.1.jar-1" value="A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-3.11.1.jar" />
+    <property name="endorsed.classpath" value="" />
+    <property name="javac.test.sourcepath" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE\build\empty" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="file.reference.bson-3.11.1.jar-2" value="C:\Users\Kemiaa\Desktop\Mongo JAR\bson-3.11.1.jar" />
+    <property name="user.language" value="en" />
+    <property name="copylibs.rebase" value="true" />
+    <property name="file.reference.bson-3.11.1.jar-1" value="A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\bson-3.11.1.jar" />
+    <property name="maven.defaultProjectBuilder.disableGlobalModelCache" value="true" />
+    <property name="includes" value="**" />
+    <property name="javadoc.nonavbar" value="false" />
+    <property name="file.reference.hamcrest-core-1.3.jar" value="A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\hamcrest-core-1.3.jar" />
+    <property name="ant.java.version" value="13" />
+    <property name="file.reference.mongodb-driver-core-3.11.1.jar-1" value="A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-core-3.11.1.jar" />
+    <property name="file.reference.mongodb-driver-core-3.11.1.jar-2" value="C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-core-3.11.1.jar" />
+    <property name="file.reference.mongodb-driver-3.11.1.jar" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-3.11.1.jar" />
+    <property name="javadoc.splitindex" value="true" />
+    <property name="test.binarytestincludes" value="" />
+    <property name="junit.available" value="true" />
+    <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
+    <property name="javac.processormodulepath" value="" />
+    <property name="runtime.encoding" value="UTF-8" />
+    <property name="javadoc.encoding" value="UTF-8" />
+    <property name="javac.classpath" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\bson-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\gson-2.8.2.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-3.11.1.jar:C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\bson-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\gson-2.8.2.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\mongodb-driver-core-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\bson-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\gson-2.8.2.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-3.11.1.jar:C:\Users\Kemiaa\Desktop\Mongo JAR\mongodb-driver-core-3.11.1.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\hamcrest-core-1.3.jar:A:\Collage Files\Year 3\Semster I\AOOSE\Mongo JAR\junit-4.11.jar" />
+    <property name="file.reference.mongodb-driver-core-3.11.1.jar" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\mongodb-driver-core-3.11.1.jar" />
+    <property name="netbeans.hash.code" value="unique=NB_EXTIDE_JAVA_PHP_WEBCOMMON_WEBEE0bd90966a-2ddc-40bc-9bce-1b4d5b66d1ee_14bdaee0-89a6-49a6-8b89-cb62cb7ab85b" />
+    <property name="file.reference.bson-3.11.1.jar" value="C:\Users\pudu1\Desktop\BUE\AOOSE\Project\Final Phase\bson-3.11.1.jar" />
+    <property name="nb.junit.batch" value="true" />
+    <property name="build.test.classes.dir" value="build/test/classes" />
+    <property name="ant.file.type.TouringSystem-impl" value="file" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="manifest.available" value="true" />
+    <property name="ant.project.invoked-targets" value="test-single" />
+    <property name="run.jvmargs.ide" value="" />
+    <property name="ap.cmd.line.internal" value="" />
+    <property name="ant.core.lib" value="C:\Program Files\NetBeans-12.1\netbeans\extide\ant\lib\ant.jar" />
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+    <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
+    <property name="user.dir" value="A:\Collage Files\Year 3\Semster I\AOOSE\Project\Final Phase\Code\AOOSE" />
+    <property name="javac.profile.cmd.line.arg" value="" />
+    <property name="platform.java" value="C:\Program Files\Java\jdk-13.0.2/bin/java" />
+    <property name="do.archive+main.class.available" value="true" />
+    <property name="&gt;&gt;&gt;&gt;&gt;&gt;&gt;" value="b847377109af2952a61fe8d3e2ec65c21ced0e25" />
+    <property name="application.title" value="TouringSystem" />
+    <property name="application.args" value="" />
+    <property name="ignore.failing.tests" value="true" />
+    <property name="javac.test.modulepath" value="" />
+    <property name="org.xml.sax.driver" value="com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser" />
+    <property name="java.vm.version" value="13.0.2+8" />
+    <property name="test.class" value="touringsystem.TravelerTest" />
+    <property name="sun.awt.datatransfer.timeout" value="1000" />
+    <property name="annotation.processing.run.all.processors" value="true" />
+    <property name="junit.forkmode" value="perTest" />
+  </properties>
+  <testcase classname="touringsystem.TravelerTest" name="testLogin" time="0.556" />
+  <system-out><![CDATA[Welcome, Ahmed
+]]></system-out>
+  <system-err><![CDATA[Jan 16, 2021 4:04:20 AM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+Jan 16, 2021 4:04:20 AM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Cluster description not yet available. Waiting for 30000 ms before timing out
+Jan 16, 2021 4:04:20 AM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:1, serverValue:376}] to 127.0.0.1:27017
+Jan 16, 2021 4:04:20 AM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 2]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2089200}
+Jan 16, 2021 4:04:20 AM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:2, serverValue:377}] to 127.0.0.1:27017
+]]></system-err>
+</testsuite>

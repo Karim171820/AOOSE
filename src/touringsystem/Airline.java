@@ -11,6 +11,7 @@ package touringsystem;
  */
 public class Airline {
     private int ID;
+    private String name;
     private String AirPortName;
     private int PriceTicket;
     private int planCapacity;
@@ -21,8 +22,9 @@ public class Airline {
     private String landingTime;
     private String flightClass;
 
-    public Airline(int ID, String AirPortName, int PriceTicket, int planCapacity, String arrivalDate, String returnDate, String destination, String takeOffTime, String landingTime, String flightClass) {
+    public Airline(int ID, String name, String AirPortName, int PriceTicket, int planCapacity, String arrivalDate, String returnDate, String destination, String takeOffTime, String landingTime, String flightClass) {
         this.ID = ID;
+        this.name = name;
         this.AirPortName = AirPortName;
         this.PriceTicket = PriceTicket;
         this.planCapacity = planCapacity;
@@ -32,6 +34,30 @@ public class Airline {
         this.takeOffTime = takeOffTime;
         this.landingTime = landingTime;
         this.flightClass = flightClass;
+    }
+
+    public Airline(String name, String AirPortName, int PriceTicket, String arrivalDate, String returnDate, String destination, String takeOffTime, String landingTime, String flightClass) {
+        this.name = name;
+        this.AirPortName = AirPortName;
+        this.PriceTicket = PriceTicket;
+        this.arrivalDate = arrivalDate;
+        this.returnDate = returnDate;
+        this.destination = destination;
+        this.takeOffTime = takeOffTime;
+        this.landingTime = landingTime;
+        this.flightClass = flightClass;
+    }
+
+    public Airline() {
+    }
+    
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getID() {
@@ -114,5 +140,11 @@ public class Airline {
         this.flightClass = flightClass;
     }
     
-    
+    public boolean planeCapacity(int pc){
+        if(pc <= planCapacity){
+            return true;
+        }
+        else
+            return false;
+    }
 }

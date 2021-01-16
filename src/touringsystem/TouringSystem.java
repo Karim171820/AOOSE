@@ -62,6 +62,7 @@ public class TouringSystem {
                 String role = sc.next();
 
                 Traveler traveler1 = new Traveler(age, passportExpireDate, creditAmount, email, 25, role, name, password, TravelerCollection);
+                traveler = traveler1 ;
                 break;
             case 2:
                 System.out.println("Enter UserName: ");

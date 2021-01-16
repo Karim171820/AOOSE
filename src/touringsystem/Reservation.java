@@ -35,18 +35,23 @@ public class Reservation {
         this.reservationDate = reservationDate;
         this.packag = packag;
         
+        Document traveller = new Document();
+        traveller.append("tID", trav.getID())
+                .append("age", trav.getAge())
+                .append("passportExpireDa_", trav.getPassportExpireDate())
+                .append("email", trav.getEmail());
+        
+        Document pkg = new Document();
+        pkg.append("ID", packag.getID())
+                .append("name", packag.getName())
+                .append("Price", packag.getPrice());
+        
         Document query = new Document("ID", ID)
-                .append("traveler.tID", trav.getID())
-                .append("traveler.age", trav.getAge())
-                .append("traveler.passportExpireDa_", trav.getPassportExpireDate())
-                .append("traveler.email", trav.getEmail())
                 .append("reservationDate", reservationDate)
-                .append("package.ID", packag.getID())
-                .append("package.name", packag.getName())
-                .append("package.Price", packag.getPrice());
-//                .append("payment.PaymentID", payment.getID())
-//                .append("payment.PaymentMethode", payment.getPaymnetMethod());
-//                //insert into class reservation
+                .append("traveler", traveller)
+                .append("package", pkg);
+                
+                
         ReservationCollection.insertOne(query);
         
         
@@ -92,37 +97,15 @@ public class Reservation {
     //______________________________________________________________________________
     // functions
 
-//    public Reservation reserve(int id, Traveler trav, String reservationDate, Packages packag) {
-//// database connection
-//        MongoClient client = new MongoClient();
-//        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-//        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-//
-//        // create object of reservation
-//        Reservation reserve = new Reservation(id, trav, reservationDate, packag);
-//        // create query 
-//        Document query = new Document("ID", id)
-//                .append("traveler.age", trav.getAge())
-//                .append("traveler.tID", trav.getID())
-//                .append("traveler.passportExpireDa_", trav.getPassportExpireDate())
-//                .append("traveler.email", trav.getEmail())
-//                .append("reservationDate", reservationDate)
-//                .append("package.ID", packag.getID())
-//                .append("package.name", packag.getName())
-//                .append("package.Price", packag.getPrice());
-////                .append("payment.PaymentID", payment.getID())
-////                .append("payment.PaymentMethode", payment.getPaymnetMethod());
-////        //insert into class reservation
-//        reservartion.insertOne(query);
-//        return reserve;
-//    }
 
     public String CancelReservation(int id) {
         MongoClient client = new MongoClient();
         MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
+        
+        
         MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-        reservartion.deleteOne(Filters.eq("ID", id));// delete from DB based in ID
-        Document find = (Document) reservartion.find((Filters.eq("ID", id)));
+        reservartion.deleteOne(Filters.eq("traveler.tID", id));// delete from DB based in ID
+        Document find = (Document) reservartion.find((Filters.eq("traveler.tID", id)));
         if (find == null) {     //check if the delete is successfull
             return "reservation deleted";
         }

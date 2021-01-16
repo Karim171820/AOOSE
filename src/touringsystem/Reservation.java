@@ -9,12 +9,13 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 
 /**
  *
- * @author pudu1
+ * @author abdelrahman amer
  */
 public class Reservation {
 
@@ -87,12 +88,12 @@ public class Reservation {
         MongoClient client = new MongoClient();
         MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
         MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-        
+
         // create object of reservation
         Reservation reserve = new Reservation(id, trav, reservationDate, packag, payment);
         // create query 
         Document query = new Document("ID", id)
-                .append("traveler.age", trav.getAge())                                     
+                .append("traveler.age", trav.getAge())
                 .append("traveler.tID", trav.getID())
                 .append("traveler.passportExpireDa_", trav.getPassportExpireDate())
                 .append("traveler.email", trav.getEmail())
@@ -126,4 +127,15 @@ public class Reservation {
 //        Reservation reserve = new Reservation(id, trav, reservationDate, packag, payment);
 //        Document query =new Document();
 //    }
+    public void UpdateReservation(Reservation reserve, int n_id, String n_name, int n_price) {
+        MongoClient client = new MongoClient();
+        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
+        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
+        Document query = (Document) reservartion.find(Filters.eq("ID", reserve.ID)).first();  // get the desired reservation based on ID
+        reservartion.updateOne(Filters.eq("package.ID", reserve.ID), Updates.set("package.ID", n_id));
+        reservartion.updateOne(Filters.eq("package.name", reserve.getPackag().getName()), Updates.set("package.name", n_name));
+        reservartion.updateOne(Filters.eq("package.Price", reserve.getPackag().getPrice()), Updates.set("package.Price", n_price));
+        
+    }
+
 }

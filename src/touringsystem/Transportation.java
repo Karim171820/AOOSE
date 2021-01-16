@@ -15,11 +15,20 @@ public class Transportation {
     private int TransportationPrice;
     private String PickupLocation;
 
+    public Transportation() {
+    }
+
     public Transportation(TransportationLeader transportationLeader, int TransportationPrice, String PickupLocation) {
         this.transportationLeader = transportationLeader;
         this.TransportationPrice = TransportationPrice;
         this.PickupLocation = PickupLocation;
     }
+    
+     public Transportation(int TransportationPrice, String PickupLocation) {
+        this.TransportationPrice = TransportationPrice;
+        this.PickupLocation = PickupLocation;
+    }
+
 
     public TransportationLeader getTransportationLeader() {
         return transportationLeader;

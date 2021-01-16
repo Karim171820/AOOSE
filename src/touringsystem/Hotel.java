@@ -37,6 +37,46 @@ public class Hotel {
 
     public Hotel() {
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getTotalNumberOfRooms() {
+        return totalNumberOfRooms;
+    }
+
+    public void setTotalNumberOfRooms(int totalNumberOfRooms) {
+        this.totalNumberOfRooms = totalNumberOfRooms;
+    }
+
+    public int getRoomsAvailable() {
+        return roomsAvailable;
+    }
+
+    public void setRoomsAvailable(int roomsAvailable) {
+        this.roomsAvailable = roomsAvailable;
+    }
+
+    public ArrayList<Room> getRoom() {
+        return room;
+    }
+
+    public void setRoom(ArrayList<Room> room) {
+        this.room = room;
+    }
     
     
    public void checkAvailableRoom(ArrayList<Room> room){

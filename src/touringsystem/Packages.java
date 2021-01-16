@@ -36,7 +36,14 @@ public class Packages  implements PackageReadOnly , TravelerSubject {
     public Packages() {
     }
 
+    public Packages(int ID, String name, int price) {
+        this.ID = ID;
+        this.name = name;
+        this.price = price;
+    }
 
+    
+    
     public Packages(int ID, String name, Airline airline, Transportation transportation, Hotel hotel, int price) {
         this.ID = ID;
         this.name = name;

@@ -104,12 +104,8 @@ public class Reservation {
         
         
         MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-        reservartion.deleteOne(Filters.eq("traveler.tID", id));// delete from DB based in ID
-        Document find = (Document) reservartion.find((Filters.eq("traveler.tID", id)));
-        if (find == null) {     //check if the delete is successfull
+        reservartion.deleteOne(Filters.eq("traveler.tID", id)); // delete from DB based in ID
             return "reservation deleted";
-        }
-        return "reservation not deleted";
     }
 
 //    public void UpdateReservation(int id, Traveler trav, String reservationDate, Packages packag, Payment payment) {
@@ -123,6 +119,8 @@ public class Reservation {
         MongoClient client = new MongoClient();
         MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
         MongoCollection reservartion = TouringSystem.getCollection("Reservation");
+        
+        
         Document query = (Document) reservartion.find(Filters.eq("ID", reserve.ID)).first();  // get the desired reservation based on ID
         reservartion.updateOne(Filters.eq("package.ID", reserve.ID), Updates.set("package.ID", n_id));
         reservartion.updateOne(Filters.eq("package.name", reserve.getPackag().getName()), Updates.set("package.name", n_name));

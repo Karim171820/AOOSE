@@ -41,6 +41,7 @@ public class TouringSystem {
         Traveler traveler = new Traveler();
         Packages pkg = new Packages();
         Admin admin = Admin.getInstance();
+        Reservation Defaultreservation = new Reservation();
         Scanner sc = new Scanner(System.in);
 
         System.out.println("\t\t\t\tHello to Touring System");
@@ -109,6 +110,7 @@ public class TouringSystem {
                 pkg.getPackagesByName(PackageName, PackageCollection);
                 System.out.println(pkg.getID());
                 Reservation reservation = new Reservation(40, traveler, "20/10/2020", pkg, ReservationCollection);
+                Defaultreservation= reservation;
 
                 break;
             case 3:
@@ -119,6 +121,8 @@ public class TouringSystem {
                 traveler.UpdateAccount(traveler, updatedName, updatedPassword);
                 break;
             case 4:
+                Defaultreservation.CancelReservation(25);
+                break;
 
         }
     }

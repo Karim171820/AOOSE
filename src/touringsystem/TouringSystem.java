@@ -64,13 +64,8 @@ public class TouringSystem {
                 String role = sc.next();
                 r = role;
 
-<<<<<<< HEAD
-                Traveler traveler1 = new Traveler(age, passportExpireDate, creditAmount, email, 25, role, name, password, TravelerCollection);
-                traveler = traveler1 ;
-=======
                 Traveler traveler1 = new Traveler(age, passportExpireDate, creditAmount, email, random.nextInt(1000), role, name, password, TravelerCollection);
                 traveler = traveler1;
->>>>>>> e06e63a67686fbe0540705a234ae6958fd216a57
                 break;
             case 2:
                 r = "traveler";

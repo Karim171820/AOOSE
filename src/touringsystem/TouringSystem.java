@@ -21,22 +21,15 @@ public class TouringSystem {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+    
+//Connection MongoDb
         MongoClient client = new MongoClient();
         MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
         MongoCollection TravelerCollection = TouringSystem.getCollection("Traveler");
         MongoCollection AdminCollection = TouringSystem.getCollection("Admin");
         MongoCollection ReservationCollection = TouringSystem.getCollection("Reservation");
         MongoCollection PackageCollection = TouringSystem.getCollection("Packages");
-//        Dummy Data
-        Traveler TempTraveler = new Traveler(27, "12/12/2024", 1500, "Someone@bue.edu.eg", 300, "Traveler", "Someone", "Someone123");
-        Airline TempAirline = new Airline(30, "EGY", 400, 350, "11/10/2020", "22/10/2020", "Spain", "22:00", "03:00", "A-Class");
-        Hotel TempHotel = new Hotel("Grand", "Aswan", 100);
-        TransportationLeader TempTransportationLeader = new TransportationLeader(30, "Amer", "Amer123@bue", "010123323546");
-        Transportation TempTransportation = new Transportation(TempTransportationLeader, 250, "Bus Stop");
-        Packages TempPackage = new Packages(30, "Package Number1", TempAirline, TempTransportation, TempHotel, 2500);
-//        Reservation TempReservation = new Reservation(30,TempTraveler,"10/10/2020",TempPackage,ReservationCollection);
-// 
+//
 
         Traveler traveler = new Traveler();
         Packages pkg = new Packages();
@@ -96,7 +89,7 @@ public class TouringSystem {
         System.out.println("    2) Reserve a Package       ");
         System.out.println("    3) UpdateAccount              ");
         System.out.println("    4) Cancel Reservation       ");
-
+        
         int num2 = sc.nextInt();
         switch (num2) {
             case 1:
@@ -111,7 +104,20 @@ public class TouringSystem {
                 System.out.println(pkg.getID());
                 Reservation reservation = new Reservation(40, traveler, "20/10/2020", pkg, ReservationCollection);
                 Defaultreservation= reservation;
-
+                System.out.println("IF You Want to Update Packge Press 1");
+                System.out.println("conintue Press 0");
+                int choice = sc.nextInt();
+                if(choice == 1){
+                  System.out.println("Choose A New package Name:  ");
+                  String NewPackageName = sc.next();
+                  Packages NewPackage = new Packages();
+                  NewPackage = NewPackage.getPackagesByName(NewPackageName, PackageCollection);
+                  Defaultreservation.UpdateReservation(Defaultreservation,  NewPackage,  ReservationCollection);
+                  
+                }
+                else if (choice == 0){
+                    break;
+                }
                 break;
             case 3:
                 System.out.println("Enter The New Name:");
@@ -121,7 +127,7 @@ public class TouringSystem {
                 traveler.UpdateAccount(traveler, updatedName, updatedPassword);
                 break;
             case 4:
-                Defaultreservation.CancelReservation(25);
+                Defaultreservation.CancelReservation(traveler.getID());
                 break;
 
         }

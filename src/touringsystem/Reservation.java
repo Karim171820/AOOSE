@@ -108,24 +108,16 @@ public class Reservation {
             return "reservation deleted";
     }
 
-//    public void UpdateReservation(int id, Traveler trav, String reservationDate, Packages packag, Payment payment) {
-//        MongoClient client = new MongoClient();
-//        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-//        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-//        Reservation reserve = new Reservation(id, trav, reservationDate, packag, payment);
-//        Document query =new Document();
-//    }
-    public void UpdateReservation(Reservation reserve, int n_id, String n_name, int n_price) {
-        MongoClient client = new MongoClient();
-        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
+    public void UpdateReservation(Reservation reserve, Packages pkg, MongoCollection ReservationCollection) {
+    
         
-        
-        Document query = (Document) reservartion.find(Filters.eq("ID", reserve.ID)).first();  // get the desired reservation based on ID
-        reservartion.updateOne(Filters.eq("package.ID", reserve.ID), Updates.set("package.ID", n_id));
-        reservartion.updateOne(Filters.eq("package.name", reserve.getPackag().getName()), Updates.set("package.name", n_name));
-        reservartion.updateOne(Filters.eq("package.Price", reserve.getPackag().getPrice()), Updates.set("package.Price", n_price));
-        
+        Document query = (Document) ReservationCollection.find(Filters.eq("ID", reserve.ID)).first();  // get the desired reservation based on ID
+        System.out.println("First Stage ***********************");
+  if (query != null ){
+        ReservationCollection.updateOne(Filters.eq("package.ID", reserve.getPackag().getID()), Updates.set("package.ID", pkg.getID()));
+        ReservationCollection.updateOne(Filters.eq("package.name", reserve.getPackag().getName()), Updates.set("package.name", pkg.getName()));
+        ReservationCollection.updateOne(Filters.eq("package.Price", reserve.getPackag().getPrice()), Updates.set("package.Price", pkg.getPrice()));
+       System.out.println("Second Stage *****************************");
+        }
     }
-
 }

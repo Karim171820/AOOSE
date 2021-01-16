@@ -5,7 +5,9 @@
  */
 package touringsystem;
 
+import com.mongodb.client.MongoCollection;
 import java.util.ArrayList;
+import org.bson.Document;
 
 /**
  *
@@ -13,6 +15,6 @@ import java.util.ArrayList;
  */
 public interface PackageReadOnly {
     
-     public ArrayList<Packages> getAllPackages();
+     public void getAllPackages(MongoCollection PackageCollection);
      
 }

@@ -37,25 +37,17 @@ public class Admin extends User {
         MongoClient client = new MongoClient();
         MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
 
-        if ("admin".equals(this.getRole())) {
-
-            MongoCollection admin = TouringSystem.getCollection("Admin");
-            Document Aacc = (Document) admin.find(Filters.eq("name", Un)).first();  // Aacc refers to traveler account
-            Admin result = gson.fromJson(Aacc.toJson(), Admin.class);
-
-
-            if (Aacc.containsValue(Un) && Aacc.containsValue(pass)) {
-                System.out.println("Welcome, " + Un);
-                return result;
-            }
-            else
-                System.out.println("Invlaid Login");
-             return null;    
+              MongoCollection admin = TouringSystem.getCollection("Admin");
+        Document tacc = (Document)admin.find(Filters.eq("name", Un)).first();  // tacc refers to traveler account
+        Admin result = gson.fromJson(tacc.toJson(), Admin.class);
+        if (result.getName().equals(Un) && result.getPassword().equals(pass)) {
+            System.out.println("Welcome, " + Un);
+            return result;
+        } else {
+            System.out.println("Invlaid Login");
         }
         return null;
     }
     
-    private void UpdatePackage(Package pack){
-        
-    }  
+  
 }

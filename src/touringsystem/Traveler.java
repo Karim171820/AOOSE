@@ -23,24 +23,56 @@ import org.bson.Document;
 public class Traveler extends User implements TravelerObserver {
 
     public int age;
-    public String passportExpireDate;
+    public String passportExpire;
     public int creditAmount;
     public String email;
     public Reservation reservationID;
     private Gson gson = new Gson();
-    
-    //observer variables 
-    private int ID;
-    private String name;
-    private int price;
 
-    public Traveler(int age, String passportExpireDate, int creditAmount, String email, int ID, String role, String name, String password) {
+    //observer variables 
+//    private int ID;
+//    private String name;
+//    private int price;
+
+  public Traveler(int id, String role, String name,String password, int age, String passportExpire, int creditAmount, String email){
+        super(id,role,name,password);
+        MongoClient client = new MongoClient();
+        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
+        MongoCollection TravelerCollection = TouringSystem.getCollection("Traveler");
+         Document doc = new Document("role", "Traveler")
+                .append("name", name).append("password", password).append("age", age)
+                .append("passportExpire", passportExpire).append("creditAmount", creditAmount)
+                .append("ID", id).append("email", email);
+        TravelerCollection.insertOne(doc);
+    }
+    public Traveler(){
+        super();
+    }
+
+    public Traveler(int age, String passportExpire, int creditAmount, String email, int ID, String role, String name, String password) {
         super(ID, role, name, password);
         this.age = age;
-        this.passportExpireDate = passportExpireDate;
+        this.passportExpire = passportExpire;
         this.creditAmount = creditAmount;
         this.email = email;
     }
+    
+
+    
+
+    public Traveler(int age, String passportExpire, int creditAmount, String email, int ID, String role, String name, String password,MongoCollection TravelerCollection ) {
+        super(ID, role, name, password);
+        this.age = age;
+        this.passportExpire = passportExpire;
+        this.creditAmount = creditAmount;
+        this.email = email;
+                Document doc = new Document("role","Traveler")
+                .append("name",name).append("password",password).append("age",age)
+                .append("passportExpire",passportExpire).append("creditAmount",creditAmount)
+                .append("ID", ID).append("email",email);
+                TravelerCollection.insertOne(doc);
+    }
+
 
     public int getAge() {
         return age;
@@ -51,11 +83,11 @@ public class Traveler extends User implements TravelerObserver {
     }
 
     public String getPassportExpireDate() {
-        return passportExpireDate;
+        return passportExpire;
     }
 
-    public void setPassportExpireDate(String passportExpireDate) {
-        this.passportExpireDate = passportExpireDate;
+    public void setPassportExpireDate(String passportExpire) {
+        this.passportExpire = passportExpire;
     }
 
     public int getCreditAmount() {
@@ -86,31 +118,28 @@ public class Traveler extends User implements TravelerObserver {
 
     }
 
-    public Traveler Login(String Un, String pass) {
+  public Traveler Login(String Un, String pass) {
         MongoClient client = new MongoClient();
         MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
 
-        if (this.getRole() == "Traveler") {
-            MongoCollection traveler = TouringSystem.getCollection("Traveler");
-            Document tacc = (Document) traveler.find(Filters.eq("name", Un)).first();  // tacc refers to traveler account
-            Traveler result = gson.fromJson(tacc.toJson(), Traveler.class);
-
-            if (tacc.containsValue(Un) && tacc.containsValue(pass)) {
-                System.out.println("Welcome, " + Un);
-                return result;
-            }
-            else
-                System.out.println("Invlaid Login");
-             return null;    
+        MongoCollection traveler = TouringSystem.getCollection("Traveler");
+        Document tacc = (Document)traveler.find(Filters.eq("name", Un)).first();  // tacc refers to traveler account
+        Traveler result = gson.fromJson(tacc.toJson(), Traveler.class);
+        if (result.getName().equals(Un) && result.getPassword().equals(pass)) {
+            System.out.println("Welcome, " + Un);
+            return result;
+        } else {
+            System.out.println("Invlaid Login");
         }
         return null;
+
     }
 
     public void UpdateAccount(Traveler t, String name, String password) {
         MongoClient client = new MongoClient();
         MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
 
-        if (t.getRole() == "Traveler") {
+        if ("Traveler".equals(t.getRole())) {
             MongoCollection traveler = TouringSystem.getCollection("Traveler");
             Document tacc = (Document) traveler.find(Filters.eq("ID", t.getID())).first();  // tacc refers to traveler account
 
@@ -123,10 +152,16 @@ public class Traveler extends User implements TravelerObserver {
     }
 
     // Obserer update function 
+//    @Override
+//    public void UpdatePackageData(int ID, String name, int price) {
+//        this.ID = ID;
+//        this.name = name;
+//        this.price = price;
+//    }
+
+    @Override
     public void UpdatePackageData(int ID, String name, int price) {
-        this.ID = ID;
-        this.name = name;
-        this.price = price;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
- 
+
 }

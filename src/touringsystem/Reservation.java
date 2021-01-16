@@ -23,18 +23,38 @@ public class Reservation {
     private Traveler traveler;
     private String reservationDate;
     private Packages packag;
-    private Payment payment;
+//    private Payment payment;
 
     // constructors
     public Reservation() {
     }
 
-    public Reservation(int ID, Traveler traveler, String reservationDate, Packages packag, Payment payment) {
+    public Reservation(int ID, Traveler trav, String reservationDate, Packages packag, MongoCollection ReservationCollection) {
         this.ID = ID;
-        this.traveler = traveler;
+        this.traveler = trav;
         this.reservationDate = reservationDate;
         this.packag = packag;
-        this.payment = payment;
+        
+        Document traveller = new Document();
+        traveller.append("tID", trav.getID())
+                .append("age", trav.getAge())
+                .append("passportExpireDa_", trav.getPassportExpireDate())
+                .append("email", trav.getEmail());
+        
+        Document pkg = new Document();
+        pkg.append("ID", packag.getID())
+                .append("name", packag.getName())
+                .append("Price", packag.getPrice());
+        
+        Document query = new Document("ID", ID)
+                .append("reservationDate", reservationDate)
+                .append("traveler", traveller)
+                .append("package", pkg);
+                
+                
+        ReservationCollection.insertOne(query);
+        
+        
     }
 
 //_________________________________________________________________________
@@ -55,9 +75,7 @@ public class Reservation {
         return packag;
     }
 
-    public Payment getPayment() {
-        return payment;
-    }
+
 
 //_________________________________________________________________________
     //setters
@@ -76,66 +94,28 @@ public class Reservation {
     public void setPackag(Packages packag) {
         this.packag = packag;
     }
-
-    public void setPayment(Payment payment) {
-        this.payment = payment;
-    }
     //______________________________________________________________________________
     // functions
 
-    public Reservation reserve(int id, Traveler trav, String reservationDate, Packages packag, Payment payment) {
-// database connection
-        MongoClient client = new MongoClient();
-        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-
-        // create object of reservation
-        Reservation reserve = new Reservation(id, trav, reservationDate, packag, payment);
-        // create query 
-        Document query = new Document("ID", id)
-                .append("traveler.age", trav.getAge())
-                .append("traveler.tID", trav.getID())
-                .append("traveler.passportExpireDa_", trav.getPassportExpireDate())
-                .append("traveler.email", trav.getEmail())
-                .append("reservationDate", reservationDate)
-                .append("package.ID", packag.getID())
-                .append("package.name", packag.getName())
-                .append("package.Price", packag.getPrice())
-                .append("payment.PaymentID", payment.getID())
-                .append("payment.PaymentMethode", payment.getPaymnetMethod());
-        //insert into class reservation
-        reservartion.insertOne(query);
-        return reserve;
-    }
 
     public String CancelReservation(int id) {
         MongoClient client = new MongoClient();
         MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-        reservartion.deleteOne(Filters.eq("ID", id));// delete from DB based in ID
-        Document find = (Document) reservartion.find((Filters.eq("ID", id)));
-        if (find == null) {     //check if the delete is successfull
-            return "reservation deleted";
-        }
-        return "reservation not deleted";
-    }
-
-//    public void UpdateReservation(int id, Traveler trav, String reservationDate, Packages packag, Payment payment) {
-//        MongoClient client = new MongoClient();
-//        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-//        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-//        Reservation reserve = new Reservation(id, trav, reservationDate, packag, payment);
-//        Document query =new Document();
-//    }
-    public void UpdateReservation(Reservation reserve, int n_id, String n_name, int n_price) {
-        MongoClient client = new MongoClient();
-        MongoDatabase TouringSystem = client.getDatabase("TouringSystem");
-        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
-        Document query = (Document) reservartion.find(Filters.eq("ID", reserve.ID)).first();  // get the desired reservation based on ID
-        reservartion.updateOne(Filters.eq("package.ID", reserve.ID), Updates.set("package.ID", n_id));
-        reservartion.updateOne(Filters.eq("package.name", reserve.getPackag().getName()), Updates.set("package.name", n_name));
-        reservartion.updateOne(Filters.eq("package.Price", reserve.getPackag().getPrice()), Updates.set("package.Price", n_price));
         
+        
+        MongoCollection reservartion = TouringSystem.getCollection("Reservation");
+        reservartion.deleteOne(Filters.eq("traveler.tID", id)); // delete from DB based in ID
+            return "reservation deleted";
     }
 
+    public void UpdateReservation(Reservation reserve, Packages pkg, MongoCollection ReservationCollection) {
+    
+        
+        Document query = (Document) ReservationCollection.find(Filters.eq("ID", reserve.ID)).first();  // get the desired reservation based on ID
+  if (query != null ){
+        ReservationCollection.updateOne(Filters.eq("package.ID", reserve.getPackag().getID()), Updates.set("package.ID", pkg.getID()));
+        ReservationCollection.updateOne(Filters.eq("package.name", reserve.getPackag().getName()), Updates.set("package.name", pkg.getName()));
+        ReservationCollection.updateOne(Filters.eq("package.Price", reserve.getPackag().getPrice()), Updates.set("package.Price", pkg.getPrice()));
+        }
+    }
 }
